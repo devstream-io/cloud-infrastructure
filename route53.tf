@@ -19,3 +19,18 @@ resource "aws_route53_record" "www" {
   records = [var.github_pages_domain]
 }
 
+resource "aws_route53_record" "docs" {
+  zone_id = data.aws_route53_zone.dtm.zone_id
+  name    = "docs"
+  type    = "CNAME"
+  ttl     = "300"
+  records = [var.readthedocs_domain]
+}
+
+resource "aws_route53_record" "blog" {
+  zone_id = data.aws_route53_zone.dtm.zone_id
+  name    = "blog"
+  type    = "CNAME"
+  ttl     = "300"
+  records = [var.github_pages_domain]
+}

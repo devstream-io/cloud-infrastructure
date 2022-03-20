@@ -8,6 +8,11 @@ variable "github_pages_domain" {
   default = "devstream-io.github.io"
 }
 
+variable "readthedocs_domain" {
+  type    = string
+  default = "devstream.readthedocs.io"
+}
+
 variable "github_pages_ip_set" {
   type = list(string)
   default = [
